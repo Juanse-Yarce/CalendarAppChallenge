@@ -114,7 +114,12 @@ class Calendar:
             event_not_found_error()
         event.add_reminder(date_time, type_)
 
-
+    def find_available_slots(self, date_: date) -> List[time]:
+        if date_ not in self.days:
+            return []
+        
+        day = self.days[date_]
+        return [slot for slot, event_id in day.slots.items() if event_id is None]
 
 
 
