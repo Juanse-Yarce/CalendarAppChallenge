@@ -28,7 +28,11 @@ class Event:
     reminders: List[Reminder] = field(default_factory=list)
     id: str = field(default_factory=generate_unique_id)
     
+    def add_reminder(self, date_time: datetime, type_: str = Reminder.EMAIL):
+        reminder = Reminder(date_time=date_time, type=type_)
+        self.reminders.append(reminder)
     
+   
 
 
 # TODO: Implement Day class here
