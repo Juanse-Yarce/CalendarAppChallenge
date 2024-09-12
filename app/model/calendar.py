@@ -61,5 +61,12 @@ class Day:
             self.slots[current_time] = None
             current_time = (datetime.combine(date.today(), current_time) + delta).time()
 
-
+    def add_event(self, event_id: str, start_at: time, end_at: time):
+        current_time = start_at
+        while current_time < end_at:
+            if self.slots.get(current_time) is not None:
+                slot_not_available_error()
+            self.slots[current_time] = event_id
+            current_time = (datetime.combine(date.today(), current_time) + timedelta(minutes=15)).time()
+    
 # TODO: Implement Calendar class here
