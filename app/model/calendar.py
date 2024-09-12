@@ -50,6 +50,16 @@ class Day:
         self.date_ = date_
         self.slots: Dict[time, Optional[str]] = {}
         self._init_slots()
+    
+    def _init_slots(self):
+        start_time = time(0, 0)
+        end_time = time(23, 45)
+        delta = timedelta(minutes=15)
+        current_time = start_time
+        
+        while current_time <= end_time:
+            self.slots[current_time] = None
+            current_time = (datetime.combine(date.today(), current_time) + delta).time()
 
 
 # TODO: Implement Calendar class here
