@@ -45,7 +45,11 @@ class Event:
                 f"Time: {self.start_at} - {self.end_at}")
 
 
-# TODO: Implement Day class here
+class Day:
+    def __init__(self, date_: date):
+        self.date_ = date_
+        self.slots: Dict[time, Optional[str]] = {}
+        self._init_slots()
 
 
 # TODO: Implement Calendar class here
