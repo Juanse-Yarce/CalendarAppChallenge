@@ -108,14 +108,11 @@ class Calendar:
         self.events[event.id] = event
         return event.id
 
-    def delete_event(self, event_id: str):
-        deleted = False
-        for slot, saved_id in self.slots.items():
-            if saved_id == event_id:
-                self.slots[slot] = None
-                deleted = True
-        if not deleted:
+    def add_reminder(self, event_id: str, date_time: datetime, type_: str):
+        event = self.events.get(event_id)
+        if not event:
             event_not_found_error()
+        event.add_reminder(date_time, type_)
 
 
 
