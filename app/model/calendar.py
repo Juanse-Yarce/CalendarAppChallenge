@@ -89,4 +89,26 @@ def update_event(self, event_id: str, start_at: time, end_at: time):
                 slot_not_available_error()
             else:
                 self.slots[slot] = event_id
-# TODO: Implement Calendar class here
+
+
+class Calendar:
+    def __init__(self):
+        self.days: Dict[date, Day] = {}
+        self.events: Dict[str, Event] = {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
