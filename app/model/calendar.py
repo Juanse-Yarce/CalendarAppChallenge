@@ -38,7 +38,11 @@ class Event:
         else:
             reminder_not_found_error()
     
-    
+    def __str__(self) -> str:
+        return (f"ID: {self.id}\n"
+                f"Event title: {self.title}\n"
+                f"Description: {self.description}\n"
+                f"Time: {self.start_at} - {self.end_at}")
 
 
 # TODO: Implement Day class here
