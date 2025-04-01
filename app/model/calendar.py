@@ -24,5 +24,5 @@ class Event:
     date_: date
     start_at: time
     end_at: time
-    reminders: list[Remainder] = []
+    reminders: list[Remainder]
 
