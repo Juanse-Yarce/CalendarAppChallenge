@@ -14,4 +14,7 @@ class Remainder:
     date_time: datetime
     type: str = EMAIL
 
-    
+    def __str__(self):
+        print(f"Reminder on {self.date_time} of type {type}")
+
+
