@@ -17,4 +17,12 @@ class Remainder:
     def __str__(self):
         print(f"Reminder on {self.date_time} of type {type}")
 
+@dataclass
+class Event:
+    title: str
+    description: str
+    date_: date
+    start_at: time
+    end_at: time
+    reminders: list[Remainder] = []
 
