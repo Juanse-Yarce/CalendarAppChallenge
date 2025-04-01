@@ -5,14 +5,13 @@ from typing import ClassVar
 from app.services.util import generate_unique_id, date_lower_than_today_error, event_not_found_error, \
     reminder_not_found_error, slot_not_available_error
 
+EMAIL = "email"
+SYSTEM = "system"
 
-# TODO: Implement Reminder class here
+@dataclass
+class Remainder:
 
+    date_time: datetime
+    type: str = EMAIL
 
-# TODO: Implement Event class here
-
-
-# TODO: Implement Day class here
-
-
-# TODO: Implement Calendar class here
+    
