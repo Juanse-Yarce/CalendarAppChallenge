@@ -51,3 +51,13 @@ class Day:
                 if self.slots[slot] is not None:
                     slot_not_available_error()
                 self.slots[slot] = event_id
+
+    def delete_event(self, event_id: str):
+        deleted = False
+        for slot, saved_id in self.slots.items():
+            if saved_id == event_id:
+                self.slots[slot] = None
+                deleted = True
+        if not deleted:
+            event_not_found_error()
+
