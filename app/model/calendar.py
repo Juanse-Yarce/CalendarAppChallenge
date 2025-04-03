@@ -36,3 +36,6 @@ class Event:
         else:
             reminder_not_found_error()
 
+    def __str__(self):
+        return f"ID: {self.id}\nEvent title: {self.title}\nDescription: {self.description}\nTime: {self.start_at} - {self.end_at}"
+
