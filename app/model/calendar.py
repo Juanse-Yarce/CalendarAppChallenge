@@ -44,3 +44,10 @@ class Day:
         self.date_ = date_
         self.slots: dict[time, str | None] = {}
         self._init_slots()
+
+    def add_event(self, event_id: str, start_at: time, end_at: time):
+        for slot in self.slots:
+            if start_at <= slot < end_at:
+                if self.slots[slot] is not None:
+                    slot_not_available_error()
+                self.slots[slot] = event_id
