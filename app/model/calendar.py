@@ -61,3 +61,7 @@ class Day:
         if not deleted:
             event_not_found_error()
 
+    def update_event(self, event_id: str, start_at: time, end_at: time):
+        self.delete_event(event_id)
+        self.add_event(event_id, start_at, end_at)
+
